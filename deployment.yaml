@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: icis-apigw-deployment
-  namespace: sa-app
+  name: edu13-backend-deployment
+  namespace: edu
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: icis-apigw
+      app: edu13-backend
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "true"    
+#      annotations:
+#        sidecar.istio.io/inject: "true"    
       labels:
-        app: icis-apigw
+        app: edu13-backend
     spec:
       containers:
-      - name: icis-apigw
-        image: nexus.dspace.kt.co.kr/icis/icis-apigw
+      - name: edu13-backend
+        image: shclub/edu13-backend
         ports:
         - name: http
           containerPort: 8800
@@ -47,9 +47,9 @@ spec:
               fieldRef:
                 apiVersion: v1
                 fieldPath: metadata.name
-        envFrom:
-        - configMapRef:
-            name: icis-apigw-configmap  
+#        envFrom:
+#        - configMapRef:
+#            name: icis-apigw-configmap  
   minReadySeconds: 30
   revisionHistoryLimit: 3
   strategy:
