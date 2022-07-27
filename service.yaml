@@ -1,0 +1,22 @@
+#########
+# Service
+#########
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: icis-apigw
+  namespace: sa-app
+  labels:
+    app: icis-apigw
+spec:
+  selector:
+    app: icis-apigw
+
+  ports:
+  - protocol: TCP
+    name: http
+    port: 8800
+    targetPort: http
+    # nodePort: 30001
+    # type: LoadBalancer
