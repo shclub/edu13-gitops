@@ -5,18 +5,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: icis-apigw
-  namespace: sa-app
+  name: edu13-backend
+  namespace: edu
   labels:
-    app: icis-apigw
+    app: edu13-backend
 spec:
   selector:
-    app: icis-apigw
-
+    app: edu13-backend
   ports:
   - protocol: TCP
     name: http
     port: 8800
     targetPort: http
-    # nodePort: 30001
-    # type: LoadBalancer
