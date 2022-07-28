@@ -6,4 +6,4 @@ resources:
 #- edu-configmap.yaml
 images:
 - name: shclub/edu13-backend
-  newTag: master-20220728234811
+  newTag: master-20220728235220
