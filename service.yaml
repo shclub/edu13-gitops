@@ -6,7 +6,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: edu13-backend
-  namespace: edu
+#  namespace: edu
   labels:
     app: edu13-backend
 spec:
@@ -15,5 +15,5 @@ spec:
   ports:
   - protocol: TCP
     name: http
-    port: 8080
-    targetPort: http
+    port: 80
+    targetPort: 8080
