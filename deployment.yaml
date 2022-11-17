@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: edu13-backend-deployment
-  namespace: edu30
 spec:
   replicas: 1
   selector:
