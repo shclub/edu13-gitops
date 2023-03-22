@@ -5,5 +5,7 @@ resources:
 - service.yaml
 #- edu-configmap.yaml
 images:
+- name: shclub/edu12-4
+  newTag: "20230322024352"
 - name: shclub/edu13-backend
   newTag: v12
